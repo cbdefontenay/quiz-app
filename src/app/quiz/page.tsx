@@ -3,6 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { quiz } from "../data";
+import { Philosopher } from "next/font/google";
+import HomeButton from "@/components/HomeButton";
+
+const philosopher = Philosopher({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -54,7 +61,7 @@ const Quiz = () => {
       selectedAnswer
         ? {
             ...prev,
-            score: prev.score + 20,
+            score: prev.score + 25,
             correctAnswers: prev.correctAnswers + 1,
           }
         : {
@@ -72,7 +79,9 @@ const Quiz = () => {
   };
 
   return (
-    <div className='text-gray-200 flex flex-col justify-center items-center mt-32 mx-2'>
+    <div
+      className={`${philosopher.className} h-screen bg-ecus bg-cover text-gray-200 flex flex-col justify-center items-center pt-14 px-2`}
+    >
       <h1 className='text-3xl font-bold mb-8 text-center'>
         Harry Potter Quiz Game
       </h1>
@@ -91,11 +100,12 @@ const Quiz = () => {
                 onClick={() => onAnswerSelected(answer, index)}
                 className={`${
                   selectedAnswerIndex === index
-                    ? selectedAnswerCorrect.includes(index)
+                    ? selectedAnswer && selectedAnswerCorrect.includes(index)
                       ? "bg-green-500 text-white list-none shadow-2xl rounded-xl"
-                      : selectedAnswerIncorrect.includes(index)
-                      ? "bg-red-500 text-white list-none shadow-2xl rounded-xl"
-                      : "hover:bg-gray-200 hover:text-gray-800 list-none rounded-xl shadow-2xl"
+                      : selectedAnswer &&
+                        selectedAnswerIncorrect.includes(index)
+                      ? "bg-gray-300 text-white list-none shadow-2xl rounded-xl"
+                      : "bg-red-500 hover:text-gray-800 list-none rounded-xl shadow-2xl"
                     : "hover:bg-gray-200 hover:text-gray-800 list-none rounded-xl shadow-2xl"
                 }`}
               >
@@ -130,22 +140,24 @@ const Quiz = () => {
               Total Correct Answers: {result.correctAnswers}
             </p>
             <p className='mb-2'>Total Wrong Answers: {result.wrongAnswers}</p>
+            <div className='grid grid-rows-3 md:grid-cols-3 gap-4 mt-8'>
+              <button
+                className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
+                type='button'
+                onClick={redirectToAllAnswers}
+              >
+                View All Answers
+              </button>
 
-            <button
-              className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
-              type='button'
-              onClick={redirectToAllAnswers}
-            >
-              View All Answers
-            </button>
-
-            <button
-              className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
-              type='button'
-              onClick={() => setShowResult(false)}
-            >
-              Play Again
-            </button>
+              <button
+                className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
+                type='button'
+                onClick={() => setShowResult(false)}
+              >
+                Play Again
+              </button>
+              <HomeButton text='Home' />
+            </div>
           </div>
         )}
       </div>

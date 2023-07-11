@@ -111,7 +111,7 @@ export const quiz = {
       question:
         "What is the name of the house-elf who served the Malfoy family?",
       answers: ["Kreacher", "Dobby", "Winky", "Hokey"],
-      correctAnswer: "Kreacher",
+      correctAnswer: "Dobby",
     },
     // Question 12
     {
@@ -214,6 +214,60 @@ export const quiz = {
       ],
       correctAnswer: "Igor Karkaroff",
     },
-    // Add more questions here...
+
+    // Question 21
+    {
+      id: 21,
+      question:
+        "Which magical creature can detect and reveal the presence of an invisible person?",
+      answers: ["Thestral", "Niffler", "Bowtruckle", "Demiguise"],
+      correctAnswer: "Demiguise",
+    },
+    // Question 22
+    {
+      id: 22,
+      question:
+        "What is the name of the potion that grants the drinker luck for a period of time?",
+      answers: [
+        "Felix Felicis",
+        "Polyjuice Potion",
+        "Veritaserum",
+        "Draught of Living Death",
+      ],
+      correctAnswer: "Felix Felicis",
+    },
+    // Question 23
+    {
+      id: 23,
+      question: "Which spell is used to create a patronus?",
+      answers: ["Avada Kedavra", "Expecto Patronum", "Crucio", "Imperio"],
+      correctAnswer: "Expecto Patronum",
+    },
+    // Question 24
+    {
+      id: 24,
+      question:
+        "What is the name of the Quidditch team from Ireland in the Quidditch World Cup?",
+      answers: [
+        "Ballycastle Bats",
+        "Puddlemere United",
+        "Kenmare Kestrels",
+        "Holyhead Harpies",
+      ],
+      correctAnswer: "Kenmare Kestrels",
+    },
+    // Question 25
+    {
+      id: 25,
+      question:
+        "What is the name of the character who can transform into a giant black dog?",
+      answers: [
+        "Sirius Black",
+        "Remus Lupin",
+        "Peter Pettigrew",
+        "Rubeus Hagrid",
+      ],
+      correctAnswer: "Sirius Black",
+    },
   ],
 };
