@@ -80,7 +80,7 @@ const Quiz = () => {
 
   return (
     <div
-      className={`${philosopher.className} h-screen bg-ecus bg-cover text-gray-200 flex flex-col justify-center items-center pt-14 px-2`}
+      className={`${philosopher.className} h-screen bg-ecus bg-cover bg-center text-gray-200 flex flex-col justify-center items-center pt-14 px-2`}
     >
       <h1 className='text-3xl font-bold mb-8 text-center'>
         Harry Potter Quiz Game

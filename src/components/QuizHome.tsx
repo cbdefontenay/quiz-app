@@ -20,7 +20,7 @@ const QuizHome = () => {
         <source src='/death.mp4' type='video/mp4' />
       </video>
 
-      <div className='absolute w-full h-full bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center'>
+      <div className='absolute w-full h-full px-4 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center'>
         <div className='max-w-lg mx-auto text-center'>
           <h1 className='text-gray-200 text-3xl md:text-4xl font-bold mb-10'>
             Welcome to the Harry Potter unofficial Quiz
@@ -36,7 +36,7 @@ const QuizHome = () => {
           <Link href='/quiz'>
             <button
               type='button'
-              className='bg-gray-200 text-blue-700 rounded-xl px-4 py-2 focus:outline-none shadow-2xl cursor-pointer'
+              className='font-bold text-xl bg-gray-200 text-blue-700 rounded-xl px-4 py-2 focus:outline-none shadow-2xl cursor-pointer'
             >
               Start Quiz
             </button>
