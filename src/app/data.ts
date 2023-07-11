@@ -8,7 +8,7 @@ export const quiz = {
       answers: [
         "Severus Snape",
         "Remus Lupin",
-        "Hermione Granger",
+        "Damocles Belby",
         "Horace Slughorn",
       ],
       correctAnswer: "Damocles Belby",

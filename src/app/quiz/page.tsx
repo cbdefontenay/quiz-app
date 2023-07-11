@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { quiz } from "../data";
 
 const Quiz = () => {
@@ -10,12 +11,26 @@ const Quiz = () => {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
+  const [selectedAnswerCorrect, setSelectedAnswerCorrect] = useState<number[]>(
+    []
+  );
+  const [selectedAnswerIncorrect, setSelectedAnswerIncorrect] = useState<
+    number[]
+  >([]);
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState({
     score: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
   });
+  const [showAllAnswers, setShowAllAnswers] = useState(false);
+
+  const router = useRouter();
+
+  const redirectToAllAnswers = () => {
+    setShowAllAnswers(true);
+    router.push("/quiz/all_answers");
+  };
 
   const { questions } = quiz;
   const { question, answers, correctAnswer } = questions[activeQuestion];
@@ -26,13 +41,13 @@ const Quiz = () => {
 
     if (answer === correctAnswer) {
       setSelectedAnswer(true);
-      console.log("true");
+      setSelectedAnswerCorrect((prev) => [...prev, index]);
     } else {
       setSelectedAnswer(false);
+      setSelectedAnswerIncorrect((prev) => [...prev, index]);
     }
   };
 
-  //   Calculate score and increment to next question
   const nextQuestion = () => {
     setSelectedAnswerIndex(null);
     setResult((prev) =>
@@ -50,7 +65,6 @@ const Quiz = () => {
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
     } else {
-      // if it is the last question then go back to zero
       setActiveQuestion(0);
       setShowResult(true);
     }
@@ -77,7 +91,11 @@ const Quiz = () => {
                 onClick={() => onAnswerSelected(answer, index)}
                 className={`${
                   selectedAnswerIndex === index
-                    ? "bg-blue-500 text-white list-none shadow-2xl rounded-xl"
+                    ? selectedAnswerCorrect.includes(index)
+                      ? "bg-green-500 text-white list-none shadow-2xl rounded-xl"
+                      : selectedAnswerIncorrect.includes(index)
+                      ? "bg-red-500 text-white list-none shadow-2xl rounded-xl"
+                      : "hover:bg-gray-200 hover:text-gray-800 list-none rounded-xl shadow-2xl"
                     : "hover:bg-gray-200 hover:text-gray-800 list-none rounded-xl shadow-2xl"
                 }`}
               >
@@ -108,13 +126,18 @@ const Quiz = () => {
         ) : (
           <div className='mt-8 text-xl'>
             <h3 className='mb-8 text-2xl text-red-400'>Result:</h3>
-            <h3 className='mb-4'>Overall {(result.score / 25) * 100}%</h3>
-            <p className='mb-2'>Total questions: {questions.length}</p>
-            <p className='mb-2'>Total Correct Score: {result.score}</p>
             <p className='mb-2'>
               Total Correct Answers: {result.correctAnswers}
             </p>
             <p className='mb-2'>Total Wrong Answers: {result.wrongAnswers}</p>
+
+            <button
+              className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
+              type='button'
+              onClick={redirectToAllAnswers}
+            >
+              View All Answers
+            </button>
 
             <button
               className='mt-4 border border-white bg-white text-black font-bold focus:outline-none py-2 px-4 rounded-xl hover:bg-transparent hover:text-white shadow-md shadow-gray-400'
