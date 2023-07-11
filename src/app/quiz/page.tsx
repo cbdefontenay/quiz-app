@@ -39,7 +39,7 @@ const Quiz = () => {
       selectedAnswer
         ? {
             ...prev,
-            score: prev.score + 5,
+            score: prev.score + 20,
             correctAnswers: prev.correctAnswers + 1,
           }
         : {
