@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <link rel='icon' href='/ecus.webp' sizes='any' />
-      <body className={`${roboto.className} bg-blue-900`}>
+      <body className={`${roboto.className} bg-black`}>
         {children} <Analytics />
       </body>
     </html>
