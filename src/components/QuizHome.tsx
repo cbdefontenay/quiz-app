@@ -33,14 +33,25 @@ const QuizHome = () => {
             Click on the button below to start the quiz and see if you can guess
             the most known and difficult facts of the series.
           </h2>
-          <Link href='/quiz'>
-            <button
-              type='button'
-              className='font-bold text-xl bg-gray-200 text-blue-700 rounded-xl px-4 py-2 focus:outline-none shadow-2xl cursor-pointer'
-            >
-              Start Quiz
-            </button>
-          </Link>
+          <div className=''>
+            <Link href='/quiz'>
+              <button
+                type='button'
+                className='font-bold text-xl bg-gray-200 text-blue-700 rounded-xl px-4 py-2 focus:outline-none shadow-2xl cursor-pointer'
+              >
+                Start Quiz
+              </button>
+            </Link>
+
+            <Link href='/test'>
+              <button
+                type='button'
+                className='ml-4 mt-4 font-bold text-xl bg-gray-200 text-blue-700 rounded-xl px-4 py-2 focus:outline-none shadow-2xl cursor-pointer'
+              >
+                Start the House Test
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
