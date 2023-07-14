@@ -38,17 +38,18 @@ const PopUpResults: React.FC<{
         <h2 className='text-center mb-8 mt-2 text-yellow-400 text-2xl font-semibold'>
           You belong to the {category} House!
         </h2>
-        <div className='text-center px-4 md:px-20 lg:px-36 text-yellow-600 '>
-          <p dangerouslySetInnerHTML={{ __html: houseText }} />
-        </div>
 
-        <div className='mt-8'>
+        <div className='bg-yellow-400 bg-opacity-40 rounded-lg p-8 mt-8 mb-10'>
           {Object.entries(percentages).map(([category, percentage]) => (
             <p
               key={category}
-              className='text-yellow-600'
+              className='text-white text-center text-xl font-semibold'
             >{`You are ${percentage.toFixed(0)}% ${category}`}</p>
           ))}
+        </div>
+
+        <div className='text-center px-4 md:px-20 lg:px-56 text-yellow-600 '>
+          <p dangerouslySetInnerHTML={{ __html: houseText }} />
         </div>
       </div>
     );
