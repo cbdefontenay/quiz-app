@@ -44,7 +44,7 @@ const NavBar = () => {
                   href='/test'
                   className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                 >
-                  Test
+                  House Test
                 </Link>
               </div>
             </div>
