@@ -1,6 +1,9 @@
 export type Question = {
   text: string;
-  choices: string[];
+  choices: {
+    choice: string;
+    category: string;
+  }[];
 };
 
 export type Answer = {
