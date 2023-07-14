@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { Roboto_Slab } from "next/font/google";
+import NavBar from "@/components/NavBar";
 
 const roboto = Roboto_Slab({ subsets: ["latin"] });
 
@@ -19,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <link rel='icon' href='/ecus.webp' sizes='any' />
-      <body className={`${roboto.className} bg-black`}>
+      <body className={`${roboto.className} bg-black overflow-x-hidden`}>
+        <NavBar />
         {children} <Analytics />
       </body>
     </html>
