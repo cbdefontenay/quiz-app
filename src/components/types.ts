@@ -11,4 +11,4 @@ export type Answer = {
   choice: string;
 };
 
-export type Category = "Gryffindor" | "Ravenclaw" | "Slytherin" | "Hufflepuff";
+export type Category = string;
