@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <link rel='icon' href='/ecus.webp' sizes='any' />
+      <link rel='icon' href='/hat.svg' sizes='any' />
       <body className={`${roboto.className} bg-black overflow-x-hidden`}>
         <NavBar />
         {children} <Analytics />
