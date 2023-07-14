@@ -2,13 +2,11 @@
 
 import { useState } from "react";
 import { Question, Answer, Category } from "@/types";
-import { questions, categories } from "@/data/questions";
 import PopUpResults from "@/components/PopUpResults";
 import { Merienda, Overlock } from "next/font/google";
 
 type Props = {
   questions: Question[];
-  categories: Category[];
 };
 
 const merienda = Merienda({
@@ -78,7 +76,7 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
         <h1
           className={`${merienda.className} flex justify-center items-center text-center text-3xl font-bold mb-4 text-yellow-600 mt-12`}
         >
-          Which House of Hogwart is yours?
+          Which House of Hogwarts is yours?
         </h1>
         <div className='h-full'>
           {questions.map((question, index) => (
