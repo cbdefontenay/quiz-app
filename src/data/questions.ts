@@ -120,6 +120,7 @@ export const questions = [
       },
       {
         choice: "I will join the Ministry and try to make some good changes.",
+        category: "Hufflepuff",
       },
     ],
   },
