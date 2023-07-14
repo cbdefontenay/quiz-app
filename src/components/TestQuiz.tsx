@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Question, Answer, Category } from "@/types";
+import { Question, Answer, Category } from "./types";
 import PopUpResults from "@/components/PopUpResults";
 import { Merienda, Overlock } from "next/font/google";
 
