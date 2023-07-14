@@ -21,7 +21,7 @@ const overlock = Overlock({
   weight: "400",
 });
 
-const TestQuiz: React.FC<Props> = ({ questions, categories }) => {
+const TestQuiz: React.FC<Props> = ({ questions }) => {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [showResult, setShowResult] = useState(false);
 
