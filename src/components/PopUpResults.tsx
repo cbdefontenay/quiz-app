@@ -24,7 +24,7 @@ const PopUpResults: React.FC<{ result: Category }> = ({ result }) => {
         "<p>'Hufflepuff is a house that has a yellow color, and a badger. In Hufflepuff you shall thrive and learn more about the Potions with your friends. You are proud and you value loyalty, patience, and hard work. Even if Cedric Diggory died, it doesn't mean Hufflepuff is not a bad House. You just need patience and a good friend to advise you... Maybe someone from Ravenclaw?'</p>";
     } else if (result === "Ravenclaw") {
       houseText =
-        "<p>'Ravenclaw is a house that has a blue color, and an eagle. In Ravenclaw you shall thrive and learn more about the Defence with your friends. You are proud and you value intelligence, wisdom, and creativity. Remember, the most intelligent persons belong to the beautiful House of Ravenclaw. There you will get a bright future.'</p>";
+        "<p>'Ravenclaw is a house that has a blue color, and a Raven. In Ravenclaw you shall thrive and learn more about the Defence with your friends. You are proud and you value intelligence, wisdom, and creativity. Remember, the most intelligent persons belong to the beautiful House of Ravenclaw. There you will get a bright future.'</p>";
     }
 
     return (
