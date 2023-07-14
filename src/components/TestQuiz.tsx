@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Question, Answer, Category } from "./types";
 import PopUpResults from "@/components/PopUpResults";
@@ -23,6 +22,13 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [showResult, setShowResult] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [resultData, setResultData] = useState<{
+    category: Category;
+    percentages: Record<Category, number>;
+  }>({
+    category: "",
+    percentages: {},
+  });
 
   const handleAnswer = (questionIndex: number, choice: string) => {
     // Retrieve the selected answer from the choices array of the corresponding question
@@ -62,6 +68,16 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
         maxCategory = category as Category;
       }
     });
+
+    // Calculate the percentages for each category
+    const percentages: Record<Category, number> = {};
+    const totalCount = answers.length;
+
+    Object.entries(result).forEach(([category, score]) => {
+      percentages[category as Category] = (score / totalCount) * 100;
+    });
+
+    setResultData({ category: maxCategory, percentages });
 
     return maxCategory;
   };
@@ -110,7 +126,7 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
             </button>
           </div>
 
-          {showResult && <PopUpResults result={calculateResult()} />}
+          {showResult && <PopUpResults result={resultData} />}
         </div>
       </div>
     </>
