@@ -22,6 +22,7 @@ const overlock = Overlock({
 const TestQuiz: React.FC<Props> = ({ questions }) => {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [showResult, setShowResult] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleAnswer = (questionIndex: number, choice: string) => {
     // Retrieve the selected answer from the choices array of the corresponding question
@@ -91,7 +92,7 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
               </h3>
               {question.choices.map((choice, choiceIndex) => (
                 <button
-                  className={`${overlock.className} ml-4 mb-8 border border-white rounded-xl py-2 px-4 focus:bg-gray-300 focus:text-green-600 text-xl`}
+                  className={`${overlock.className} ml-4 mb-8 border border-white rounded-xl py-2 px-4 focus:bg-yellow-600 focus:text-gray-800 text-xl`}
                   key={choiceIndex}
                   onClick={() => handleAnswer(index, choice.choice)}
                 >
