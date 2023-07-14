@@ -72,7 +72,7 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
 
   return (
     <>
-      <div className='h-full'>
+      <div className='h-full w-full'>
         <h1
           className={`${merienda.className} flex justify-center items-center text-center text-3xl font-bold mb-4 text-yellow-600 mt-12`}
         >
@@ -100,12 +100,15 @@ const TestQuiz: React.FC<Props> = ({ questions }) => {
               ))}
             </div>
           ))}
-          <button
-            className='mt-8 border border-white rounded-xl py-2 px-4'
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
+          <div className='w-full flex justify-center items-center'>
+            <button
+              className='mt-20 border border-gray-300 rounded-xl shadow-xl py-2 px-4'
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
+
           {showResult && <PopUpResults result={calculateResult()} />}
         </div>
       </div>
