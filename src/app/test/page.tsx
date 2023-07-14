@@ -1,6 +1,6 @@
 import React from "react";
 import TestQuiz from "@/components/TestQuiz";
-import { questions, categories } from "../data/questions";
+import { questions, categories } from "../../data/questions";
 
 const TestPage = () => {
   return (
