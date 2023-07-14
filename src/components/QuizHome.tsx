@@ -30,8 +30,9 @@ const QuizHome = () => {
             series.
           </h2>
           <h2 className='text-gray-200 text-lg md:text-xl mb-10'>
-            Click on the button below to start the quiz and see if you can guess
-            the most known and difficult facts of the series.
+            Click on one of the buttons below to start the quiz and see if you
+            can guess the most known and difficult facts of the series and
+            discover to wich House you belong.
           </h2>
           <div className=''>
             <Link href='/quiz'>
